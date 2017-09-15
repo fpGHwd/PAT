@@ -9,7 +9,9 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <memory.h>
+#include <stdlib.h>
 
-
+#include <stdbool.h>
 
 // TODO: reference additional headers your program requires here
