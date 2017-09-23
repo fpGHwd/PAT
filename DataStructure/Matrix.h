@@ -10,7 +10,7 @@ typedef int ElemType;
 // Assign
 // ADisp
 
-// xishu matrix, tuple node 
+// sparse matrix, tuple node 
 // i, j, a(i,j)
 
 typedef struct{
@@ -38,3 +38,20 @@ void CreatMat(TSMatrix &t, ElemType **A, int row, int col); // create matrix
 bool AssignMat(TSMatrix &t, ElemType x, int i, int j);
 bool Assign(TSMatrix &t, ElemType &x, int i, int j);
 void DispMat(TSMatrix t);
+bool TransMat(TSMatrix t, TSMatrix &tm);
+
+/* cross link list to save matrix */
+
+#define M 3 // row
+#define N 4 // column
+#define Max ((M)>(N)?(M):(N)) // column max 
+typedef struct mtxn{
+	int row;
+	int col;
+	struct mtxn *right, *down;
+	union {
+		int value;
+		struct mtxn *link;
+	}tag;
+}MatNode;
+/*operation will not be inducted*/

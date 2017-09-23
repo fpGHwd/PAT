@@ -139,7 +139,7 @@ void TestSqStack(void){
 
 }
 
-void InitStack(SqStack *&s){
+void InitStack(SqStack * s){
 	s->top = 1;
 }
 

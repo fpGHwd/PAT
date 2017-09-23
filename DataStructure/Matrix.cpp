@@ -101,3 +101,8 @@ void DispMat(TSMatrix t)
 	for (index = 0; index < t.nums; index++)
 		printf("\t%d\t%d\t%d\n", t.data[index].r, t.data[index].c, t.data[index].d);
 };
+
+bool TransMat(TSMatrix t, TSMatrix &tm)
+{
+
+}

@@ -14,9 +14,10 @@ typedef struct {
 }SqStack;
 
 void TestSqStack(void);
-void InitStack(SqStack *&s);
+void InitStack(SqStack * s);
 bool StackEmpty(SqStack *s);
 bool Push(SqStack *&s, ElemType e);
+bool Push(SqStack *&s, void* e);
 bool Pop(SqStack *&s, ElemType &e);
 bool GetTop(SqStack *&s, ElemType &e);
 
