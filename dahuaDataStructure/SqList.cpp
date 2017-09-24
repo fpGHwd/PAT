@@ -38,7 +38,7 @@ void InitSqList(SqList **sq) { // SqList * InitSqList(void);
 	for (i = 0; i < 10; i++) {
 		s->data[i] = b[i];
 	}
-	s->length = 10;
+	s->length = 10; // s->length++ in for-loop
 	*sq = s;
 	//return s;
 }
