@@ -138,9 +138,10 @@ Status Pop(LinkStack *L, SElemType *e) {
 	return OK;
 }
 
-char *input = "9+(3-1)*3+10/2";
+static char *input = "9+(3-1)*3+10/2";
 char* ReversePolishNotation(char* input) { // todo implementation
 
+	return NULL;
 }
 
 
@@ -150,7 +151,7 @@ int Fbi(int i) {
 	return Fbi(i - 1) + Fbi(i - 2);
 }
 
-int Array[10] = { 1,2,3,4,5,6,7,8,9,10};
+static int Array[10] = {1,2,3,4,5,6,7,8,9,10};
 void TestStack(void) {
 	int i;
 	//SElemType e = 20;

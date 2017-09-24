@@ -5,10 +5,12 @@
 
 void test_sqlist(void);
 void TestStack(void);
+void QueueTest(void);
 int main()
 {
 	//test_sqlist();
-	TestStack();
+	//TestStack();
+	QueueTest();
     return 0;
 }
 
