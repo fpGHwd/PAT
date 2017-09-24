@@ -102,6 +102,7 @@ Status PrintSqList(SqList *L) {
 typedef struct Node {
 	ElemType data;
 	struct Node *next;
+	//todo: add a length record
 }Node;
 typedef struct Node *LinkList;
 

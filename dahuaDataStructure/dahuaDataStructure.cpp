@@ -4,9 +4,11 @@
 #include "stdafx.h"
 
 void test_sqlist(void);
+void TestStack(void);
 int main()
 {
-	test_sqlist();
+	//test_sqlist();
+	TestStack();
     return 0;
 }
 
