@@ -81,9 +81,9 @@ Status EnQueue(LinkQueue *L, QElemType e) {
 	n->data = e;
 	n->next = NULL; // set node
 
-	if (QueueEmpty(L)) {
+
+	if (L->front == NULL && L->rear == NULL)
 		L->rear = L->front = n;
-	}
 	else {
 		L->rear->next = n;
 		L->rear = n;
@@ -101,14 +101,16 @@ Status EnQueue(LinkQueue *L, QElemType e) {
 Status DeQueue(LinkQueue *L, QElemType *e) {
 	QNode *p;
 
-	if (L->front == L->rear)
+	if (L->front == NULL && L->rear == NULL) // weak condition judgment
 		return ERROR;
 
 	*e = L->front->data;
-	p = L->front->next;
-	L->front->next = p->next;
-	if (L->rear == p)
-		L->rear = NULL;
+	p = L->front;
+	if (L->front == L->rear)
+		L->front = L->rear = NULL;
+	else
+		L->front = p->next;
+
 	free(p);
 
 	return OK;
@@ -134,15 +136,21 @@ void QueueTest(void) {
 	*/
 
 	// test linkqueue 
+	/*
 	InitQueue(&linkqueue); // fixed: not success 20170925-12:15
 	for (i = 0; i < 5; i++)
 		EnQueue(linkqueue, Array[i]);
 	DeQueue(linkqueue, &e);
 	DeQueue(linkqueue, &e);
+	DeQueue(linkqueue, &e);
+	DeQueue(linkqueue, &e);
+	DeQueue(linkqueue, &e);
+	DeQueue(linkqueue, &e); // EMPTY THE QUEUE
 	for (i = 5; i < 10; i++)
 		EnQueue(linkqueue, Array[i]);
 	DeQueue(linkqueue, &e);
 	DeQueue(linkqueue, &e);
+	*/
 
 	printf("\n");
 }
