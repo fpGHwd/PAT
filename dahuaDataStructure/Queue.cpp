@@ -140,17 +140,15 @@ void QueueTest(void) {
 	InitQueue(&linkqueue); // fixed: not success 20170925-12:15
 	for (i = 0; i < 5; i++)
 		EnQueue(linkqueue, Array[i]);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e); // EMPTY THE QUEUE
+	i=6;
+	while(i--)
+		DeQueue(linkqueue, &e);  // EMPTY THE QUEUE
 	for (i = 5; i < 10; i++)
 		EnQueue(linkqueue, Array[i]);
-	DeQueue(linkqueue, &e);
-	DeQueue(linkqueue, &e);
-	*/
+	i=2;
+	while(i--)
+		DeQueue(linkqueue, &e);
+	//*/
 
 	printf("\n");
 }
