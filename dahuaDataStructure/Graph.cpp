@@ -59,9 +59,68 @@ void CreateGraph(MGraph **G) {
 	fclose(fp); // close file
 }
 
+
+// weight
+typedef struct EdgeNode {
+	int adjvex;
+	EdgeType weight;
+	struct EdgeNode *next;
+}EdgeNode;
+
+typedef struct VertexNode {
+	VertexType data;
+	EdgeNode *firstedge;
+}VertexNode, AdjList[MAXVEX];
+
+typedef struct {
+	AdjList adjList;
+	int numVertexes, numEdges;
+}GraphAdjList;
+
+GraphAdjList *adjacentlistgraph;
+void CreateALGraph(GraphAdjList **G) {
+	FILE *fp;
+	int s,m,k, x,y,w;
+	char c;
+	EdgeNode *e;
+
+	*G = (GraphAdjList*)malloc(sizeof(GraphAdjList));
+	m = 8;
+	while (m--)
+		(*G)->adjList[m].firstedge = NULL;
+
+	if((s = fopen_s(&fp, PRIVATEDATA, "r") != 0))
+		exit(1);
+
+	fscanf_s(fp, "%d %d", &(*G)->numVertexes, &(*G)->numEdges); // vertex and edges
+
+	// nodes
+	do { fscanf_s(fp, "%c", &c); } while (c != 'A');
+	(*G)->adjList[0].data= c;
+	m = 8;
+	while (m--)
+		fscanf_s(fp, "%c", &((*G)->adjList[8-m].data));
+
+	// edges
+	for (k = 0; k < (*G)->numEdges; k++) {
+		fscanf_s(fp, "%d %d %d", &x, &y, &w);
+		e = (EdgeNode *)malloc(sizeof(EdgeNode));
+		e->weight = w;
+		e->adjvex = x;
+		e->next = (*G)->adjList[y].firstedge;
+		(*G)->adjList[y].firstedge = e;
+		e = (EdgeNode *)malloc(sizeof(EdgeNode));
+		e->weight = w;
+		e->adjvex = y;
+		e->next = (*G)->adjList[x].firstedge;
+		(*G)->adjList[x].firstedge = e;
+	}
+
+	fclose(fp);
+}
+
 void test_graph(void) {
-
-	CreateGraph(&graph); // create a graph
-
+	//CreateGraph(&graph); // create a graph via matrix
+	CreateALGraph(&adjacentlistgraph); // a graph via adjacent list graph
 	printf("\n");
 }
