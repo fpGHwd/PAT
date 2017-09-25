@@ -4,13 +4,14 @@
 
 #define DATAPATH "D:\\nayowang\\Documents\\Visual Studio 2017\\Projects\\DataStructure\\test\\data.txt"
 #define PRIVATEDATA "d:\\nayowang\\Documents\\Visual Studio 2017\\Projects\\DataStructure\\dahuaDataStructure\\PrivateData.txt"
+#define BFSDATA "d:\\nayowang\\Documents\\Visual Studio 2017\\Projects\\DataStructure\\dahuaDataStructure\\BFSDATA.txt"
 
 //G(V,E) // vertex, edge
 
 typedef char VertexType; // typedef char VertexType
 typedef int EdgeType;
 #define MAXVEX 10
-#define INIFINITY 65535
+#define INFINITY 65535
 
 typedef struct {
 	VertexType vexs[MAXVEX];
@@ -39,7 +40,7 @@ void CreateGraph(MGraph **G) {
 	fscanf_s(fp, "%d %d", &m, &n);
 	for (i = 0; i < m; i++)
 		for (j = 0; j < m; j++)
-			(*G)->arc[i][j] = INIFINITY;
+			(*G)->arc[i][j] = INFINITY;
 	(*G)->numVertexes = m;
 	(*G)->numEdges = n;
 
@@ -127,12 +128,13 @@ void DFS(MGraph *G, int i) {
 	printf("%c ", G->vexs[i]);
 	for (j = 0; j< G->numVertexes;j++)
 	{
-		if (G->arc[i][j] == 1 && !visited[j])
+		//if (G->arc[i][j] == 1 && !visited[j])
+		if (G->arc[i][j] < INFINITY && !visited[j])
 			DFS(G, j);
 	}
 }
 
-void DFSTraverse(MGraph *G) {
+void DFSTraverse(MGraph *G) { // TODO: need to be fixed // for PrivateData.txt, the result is ABCDEFGHI
 	int i = 0;
 
 	while (i++ < 8)
@@ -147,6 +149,38 @@ void DFSTraverse(MGraph *G) {
 
 }
 
+#include "Queue.h"
+
+void BFSTraverse(MGraph *G) { // for PrivateData.txt the result is A|BF|CGEI|DH
+	int i, j;
+
+	// initiate queue
+	SqQueue *Q;
+	InitQueue(&Q);
+	
+	for (i = 0; i < G->numVertexes; i++)
+		visited[i] = 0;
+	for (i = 0; i< G->numVertexes; i++)
+	{
+		if (!visited[i]) {
+			visited[i] = 1;
+			printf("%c ", G->vexs[i]);
+			EnQueue(Q, i);
+			while (Q->rear != Q->front) {
+				DeQueue(Q, &i);
+				for (j = 0; j<G->numVertexes; j++)
+				{
+					if (G->arc[i][j] < INFINITY && !visited[j]) { // if(G->arc[i][j] == 1 && !visited[j])
+						visited[j] = 1;
+						printf("%c ", G->vexs[j]);
+						EnQueue(Q, j);
+					}
+				}
+			}
+		}
+	}
+}
+
 void test_graph(void) {
 
 	//CreateGraph(&graph); // create a graph via matrix
@@ -154,8 +188,11 @@ void test_graph(void) {
 	//CreateALGraph(&adjacentlistgraph); // a graph via adjacent list graph
 
 	// test matrix graph traverse
+	//CreateGraph(&graph);
+	//DFSTraverse(graph);
+
 	CreateGraph(&graph);
-	DFSTraverse(graph);
+	BFSTraverse(graph);
 
 	printf("\n");
 }

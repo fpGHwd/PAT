@@ -1,21 +1,8 @@
 #include "stdafx.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "Queue.h"
 
-#define OK 1
-#define ERROR 0
-#define TRUE 1
-#define FALSE 0
-typedef int Status;
-
-#define MAXSIZE 20
-
-typedef int QElemType;
-typedef struct {
-	QElemType data[MAXSIZE];
-	int front;
-	int rear;
-}SqQueue;
 
 SqQueue *sqqueue;
 
