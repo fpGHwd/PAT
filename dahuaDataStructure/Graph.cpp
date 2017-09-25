@@ -119,8 +119,43 @@ void CreateALGraph(GraphAdjList **G) {
 	fclose(fp);
 }
 
+static int visited[MAXVEX];
+// todo: DFS in matrix graph
+void DFS(MGraph *G, int i) {
+	int j;
+	visited[i] = 1;
+	printf("%c ", G->vexs[i]);
+	for (j = 0; j< G->numVertexes;j++)
+	{
+		if (G->arc[i][j] == 1 && !visited[j])
+			DFS(G, j);
+	}
+}
+
+void DFSTraverse(MGraph *G) {
+	int i = 0;
+
+	while (i++ < 8)
+		visited[i] = 0;
+
+	// visit all vertex
+	i = 0;
+	do {
+		if (!visited[i])
+			DFS(G, i);
+	} while (++i < 8);
+
+}
+
 void test_graph(void) {
+
 	//CreateGraph(&graph); // create a graph via matrix
-	CreateALGraph(&adjacentlistgraph); // a graph via adjacent list graph
+
+	//CreateALGraph(&adjacentlistgraph); // a graph via adjacent list graph
+
+	// test matrix graph traverse
+	CreateGraph(&graph);
+	DFSTraverse(graph);
+
 	printf("\n");
 }
