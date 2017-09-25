@@ -150,8 +150,7 @@ void DFSTraverse(MGraph *G) { // TODO: need to be fixed // for PrivateData.txt, 
 }
 
 #include "Queue.h"
-
-void BFSTraverse(MGraph *G) { // for PrivateData.txt the result is A|BF|CGEI|DH
+void BFSTraverse(MGraph *G) { // for PrivateData.txt the result is A|BF|CGEI|DH // not accurate: run result-ABFCGIEDG
 	int i, j;
 
 	// initiate queue

@@ -7,12 +7,14 @@ void test_sqlist(void);
 void TestStack(void);
 void QueueTest(void);
 void TestString(void);
-int main()
+void test_graph(void);
+int main(int argc, char **argv)
 {
 	//test_sqlist();
 	//TestStack();
 	//QueueTest();
-	TestString();
+	//TestString();
+	test_graph();
     return 0;
 }
 

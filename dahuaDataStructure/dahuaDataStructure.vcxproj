@@ -143,14 +143,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\test\data.txt" />
+    <Text Include="BFSDATA.txt" />
+    <Text Include="PrivateData.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dahuaDataStructure.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SqList.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -160,7 +165,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Stringcpp.cpp" />
+    <ClCompile Include="String.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
