@@ -64,21 +64,36 @@ void InitQueue(LinkQueue **L) {
 	(*L)->front = (*L)->rear = NULL;
 }
 
+bool QueueEmpty(LinkQueue *L) { // forget and cause problem
+	if (L->rear == NULL && L->front == NULL)
+		return true;
+	else
+		return false;
+	// return L->rear == NULL && L->front == NULL;
+}
+
 Status EnQueue(LinkQueue *L, QElemType e) {
 	QNode *p, *n;
 
 	n = (QNode *)malloc(sizeof(QNode));
 	if (n == NULL)
 		return ERROR; 
-
 	n->data = e;
-	n->next = NULL;
-	//L->rear->next = n;
+	n->next = NULL; // set node
 
-	
+	if (QueueEmpty(L)) {
+		L->rear = L->front = n;
+	}
+	else {
+		L->rear->next = n;
+		L->rear = n;
+	}
+
+
+	/*
 	if (L->rear)
-		L->front = L->rear->next = n; 
-	L->rear = n;
+		L->front = L->rear->next = n; */
+	//L->rear = n;
 
 	return OK;
 }
@@ -92,6 +107,8 @@ Status DeQueue(LinkQueue *L, QElemType *e) {
 	*e = L->front->data;
 	p = L->front->next;
 	L->front->next = p->next;
+	if (L->rear == p)
+		L->rear = NULL;
 	free(p);
 
 	return OK;
@@ -117,7 +134,7 @@ void QueueTest(void) {
 	*/
 
 	// test linkqueue 
-	InitQueue(&linkqueue); // TODO: not success 20170925-12:15
+	InitQueue(&linkqueue); // fixed: not success 20170925-12:15
 	for (i = 0; i < 5; i++)
 		EnQueue(linkqueue, Array[i]);
 	DeQueue(linkqueue, &e);
