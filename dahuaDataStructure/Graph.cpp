@@ -154,8 +154,8 @@ void BFSTraverse(MGraph *G) { // for PrivateData.txt the result is A|BF|CGEI|DH 
 	int i, j;
 
 	// initiate queue
-	SqQueue *Q;
-	InitQueue(&Q);
+	SqQueue *Q; // attention: memory leaking
+	InitQueue(&Q); 
 	
 	for (i = 0; i < G->numVertexes; i++)
 		visited[i] = 0;
@@ -190,8 +190,9 @@ void test_graph(void) {
 	//CreateGraph(&graph);
 	//DFSTraverse(graph);
 
-	CreateGraph(&graph);
-	BFSTraverse(graph);
+	// test BFS traverse // OK
+	//CreateGraph(&graph);
+	//BFSTraverse(graph);
 
 	printf("\n");
 }

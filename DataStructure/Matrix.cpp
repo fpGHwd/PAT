@@ -13,7 +13,7 @@ void CreatMat(TSMatrix &t, ElemType **A, int row, int col)
 			if (A[i][j] != 0) {
 				t.data[t.nums].r = i;
 				t.data[t.nums].c = j;
-				t.data[t.nums].d = A[i][j]; // core operations, which can be saw by programmer the first sight
+				t.data[t.nums].d = A[i][j]; // core operations, core
 				t.nums++;
 			}
 		}

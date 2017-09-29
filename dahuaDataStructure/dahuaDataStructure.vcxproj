@@ -157,6 +157,7 @@
     <ClCompile Include="dahuaDataStructure.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="SqList.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -166,6 +167,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

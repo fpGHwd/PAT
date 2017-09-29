@@ -8,13 +8,15 @@ void TestStack(void);
 void QueueTest(void);
 void TestString(void);
 void test_graph(void);
+void TestSort(void);
 int main(int argc, char **argv)
 {
 	//test_sqlist();
 	//TestStack();
 	//QueueTest();
 	//TestString();
-	test_graph();
+	//test_graph();
+	TestSort();
     return 0;
 }
 
