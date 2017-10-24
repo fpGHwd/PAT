@@ -53,5 +53,8 @@
     <ClCompile Include="Dijkstra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KMP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

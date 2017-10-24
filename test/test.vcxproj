@@ -155,6 +155,7 @@
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="Hash2.cpp" />
+    <ClCompile Include="KMP.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="Prim.cpp" />
     <ClCompile Include="stdafx.cpp">
