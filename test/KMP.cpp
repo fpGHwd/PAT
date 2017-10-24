@@ -26,12 +26,12 @@ static char *pattern1 = "GOOGLE"; // next[] = {0,1,1,1,2,1};
 static char *search2 = "abababaababacbababaaabaabaabcac"; // index = 8,15,24;
 static char *pattern2 = "ababacb"; // next[] = {0,1,1,2,3,4,1};
 static char *pattern3 = "ababaaaba"; //next[] = {0,1,1,2,3,4,2,2,3};
-static char *pattern4 = "abaabcac"; // next[] = {0,1,1,2,2,3,1,2}; //example in textbook
+static char *pattern4 = "abaabcac"; // next[] = {0,1,1,2,2,3,1,2};
 
 void get_next(char *pattern, int *next) {
 	int i = 1, j = 0;
 	next[i-1] = 0; // i -> index -> next[i];
-	while (i < strlen(pattern)) // i from 1 to n-1, total n-1 
+	while (i < strlen(pattern)) // i from 1 to n-1, n-1 in total 
 		if (j == 0 || pattern[i-1] == pattern[j-1])
 			next[i++] = ++j; // i++;j++;next[i-1] = j;
 		else 
@@ -67,13 +67,14 @@ void test_string(void) {
 	get_next(pattern3, *next + 40);
 	get_next(pattern4, *next + 60);
 	*/
-
+	/*
 	// get index
 	int i[4] = { 0 } , k = 0;
 	i[k++] = get_index(search1, pattern1);
 	i[k++] = get_index(search2, pattern2);
 	i[k++] = get_index(search2, pattern3);
 	i[k++] = get_index(search2, pattern4);
+	*/
 
 	getchar();
 }
