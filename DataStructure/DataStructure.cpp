@@ -9,6 +9,8 @@ void testDeleteReconstruct() {
 
 }
 
+void test_create_tree(void);
+
 typedef struct int_array {
 	int data[4];
 }test_type;
@@ -28,6 +30,7 @@ int main()
 	}
 	*/
 
+	/*
 	test_type abcd[10];
 	test_type *a = abcd;
 	a++;
@@ -38,8 +41,10 @@ int main()
 	printf("%d\n", a - abcd);
 	a++;
 	printf("%d\n", a - abcd);
+	*/
 
 	//test_quick_sort();
+	test_create_tree();
 
 	getchar();
     return 0;
