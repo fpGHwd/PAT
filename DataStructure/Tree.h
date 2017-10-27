@@ -34,19 +34,26 @@ typedef struct BiTNode {
 
 void CreateBTree(BiTNode *&b, char *str);
 void DestroyTree(BiTNode *&b);
-BiTNode *FindNode(BiTNode *b, ElemType x);
-BiTNode *LchildNode(BiTNode *p);
-BiTNode *RchildNode(BiTNode *p);
 int BTHeight(BiTNode *b);
 void DispBTree(BiTNode *b);
 void VisitNode(BiTNode *N); // visit the node
 void PreOrder(BiTNode *b);
 void InOrder(BiTNode *b);
 void PostOrder(BiTNode *b);
+BiTNode *FindNode(BiTNode *b, ElemType x);
+BiTNode *LchildNode(BiTNode *p);
+BiTNode *RchildNode(BiTNode *p);
+int NodesSum(BiTNode *b);
+void DispLeaf(BiTNode *b);
+int NodeLevel(BiTNode *b, ElemType x, int h);
+void Lnodenum(BiTNode *b, int h, int k, int &n); // todo: why this?
+bool Like(BiTNode *b1, BiTNode *b2); // if tree appearance is the same
+bool Ancestor(BiTNode *b, ElemType x);
 
 SqStack S;
-void InOrderNoneRecurrsion(BiTNode *b);
+void InOrderNoneRecurrsion(BiTNode *b); // todo: 
 void LevelOrder(BiTNode *b);
+BiTNode* CreatBT1(char *pre, char *in, int n);
 
 /*thread bi-tree*/
 typedef struct ThreadNode {

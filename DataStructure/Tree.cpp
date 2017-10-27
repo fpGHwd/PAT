@@ -63,40 +63,6 @@ void DestroyTree(BiTNode *&b)
 	free(b);
 }
 
-// find a pointer in the tree with data(x)
-BiTNode *FindNode(BiTNode *b, ElemType x) {
-	BiTNode *p;
-
-	if (b == NULL)
-		return NULL;
-
-	if (b->data == x)
-		return b;
-	else {
-		p = FindNode(b->lchild, x);
-		if (p != NULL)
-			return p;
-		else
-			return FindNode(b->rchild, x);
-	}
-}
-
-BiTNode * LchildNode(BiTNode *p)
-{
-	if (p == NULL)
-		return NULL;
-	else
-		return p->lchild;
-}
-
-BiTNode * RchildNode(BiTNode *p)
-{
-	if (p == NULL)
-		return NULL;
-	else
-		return p->rchild;
-}
-
 int BTHeight(BiTNode *b)
 {
 	int i,j;
@@ -156,6 +122,116 @@ void PostOrder(BiTNode *b) {
 	}
 }
 
+// find a pointer in the tree with data(x)
+BiTNode *FindNode(BiTNode *b, ElemType x) {
+	BiTNode *p;
+
+	if (b == NULL)
+		return NULL;
+
+	if (b->data == x)
+		return b;
+	else {
+		p = FindNode(b->lchild, x);
+		if (p != NULL)
+			return p;
+		else
+			return FindNode(b->rchild, x);
+	}
+}
+
+BiTNode * LchildNode(BiTNode *p)
+{
+	if (p == NULL)
+		return NULL;
+	else
+		return p->lchild;
+}
+
+BiTNode * RchildNode(BiTNode *p)
+{
+	if (p == NULL)
+		return NULL;
+	else
+		return p->rchild;
+}
+
+int NodesSum(BiTNode *b)
+{
+	if (b == NULL)
+		return 0;
+	else
+		return NodesSum(b->lchild) + 1 + NodesSum(b->rchild);
+}
+
+void DispLeaf(BiTNode *b)
+{
+	if (b == NULL)
+		return;
+	if (b->lchild == NULL && b->rchild == NULL)
+		VisitNode(b);
+	DispLeaf(b->lchild);
+	DispLeaf(b->rchild);
+
+}
+
+int NodeLevel(BiTNode *b, ElemType x, int h)
+{
+	int l;
+
+	if (b == NULL)
+		return 0; // ?
+	if (b->data == x)
+		return h;
+	else {
+		l = NodeLevel(b->lchild, x, h + 1);
+		if (l != 0)
+			return l;
+		else
+			return NodeLevel(b->rchild, x, h + 1);
+	}
+}
+
+void Lnodenum(BiTNode *b, int h, int k, int &n)
+{
+	if (b == NULL)
+		return;
+	else {
+		if (h == k) n++;
+		else if (h < k) {
+			Lnodenum(b->lchild, h + 1, k, n);
+			Lnodenum(b->rchild, h + 1, k, n);
+		}
+	}
+}
+
+bool Like(BiTNode *b1, BiTNode *b2)
+{
+	if (b1 == NULL && b2 == NULL)
+		return true;
+	else if (b1 == NULL || b2 == NULL)
+		return false;
+	else {
+		return (Like(b1->lchild, b2->lchild) && Like(b1->rchild, b2->rchild));
+	}
+}
+
+bool Ancestor(BiTNode *b, ElemType x)
+{
+	if (b == NULL)
+		return false;
+	else if ((b->lchild != NULL && b->lchild->data == x) || (b->rchild != NULL && b->rchild->data == x)) {
+		printf("%c", b->data);
+		return true;
+	}
+	else if (Ancestor(b->lchild, x) || Ancestor(b->rchild, x)) {
+		printf("%c", b->data);
+		return true;
+	}
+	else
+		return false;
+}
+
 #include "Stack.h"
 void InOrderNoneRecurrsion(BiTNode *b)
 {
@@ -196,31 +272,80 @@ void InOrderNoneRecurrsion(BiTNode *b)
 
 }
 
+typedef struct {
+	BiTNode *data[MaxSize];
+	int front, rear;
+}SqQueue;
+
+void InitQueue(SqQueue &qu) {
+	
+	qu.front = 0;
+	qu.rear = 0;
+}
+
+bool QueueEmpty(SqQueue qu) {
+	if (qu.front == qu.rear)
+		return true;
+	else
+		return false;
+}
+
+bool QueueFull(SqQueue qu) {
+	if((qu.rear+1)%MaxSize == qu.front)//if ((qu.front + 1) % MaxSize == qu.rear) 
+		return true;
+	else 
+		return false;
+}
+
+void Enqueue(SqQueue &qu, BiTNode *n) {
+	if (!QueueFull(qu)) {
+		qu.data[qu.rear] = n;
+		qu.rear = (qu.rear + 1) % MaxSize;
+	}
+	else
+		return;
+}
+
+void Dequeue(SqQueue &qu, BiTNode *&n) {
+	if (!QueueEmpty(qu)) {
+		n = qu.data[(qu.front)];
+		qu.front = (qu.front + 1) % MaxSize;// qu.front == (qu.front + 1) % MaxSize;
+	}
+}
+
 void LevelOrder(BiTNode *b)
 {
-	/*
-	InitQueue(Q);
-	BiTree p;
-	EnQueue(Q, T);
-
-	while (!IsEmpty(Q)) {
-		DeQueue(Q, p);
-		VisitNode(p);
-		if (p->lchild)
-			EnQueue(Q, p->lchild);
-		if (p->rchild)
-			EnQueue(Q, p->rchild);
+	SqQueue qu;
+	BiTNode *p;
+	
+	InitQueue(qu);
+	if (b == NULL) // not necessary
+		return;
+	Enqueue(qu, b);
+	
+	while (!QueueEmpty(qu)) {
+		Dequeue(qu, p);
+		printf("%c", p->data);
+		if (p->lchild != NULL)
+			Enqueue(qu, p->lchild);
+		if (p->rchild != NULL)
+			Enqueue(qu, p->rchild);
 	}
+}
 
-	return;
-	*/
+// pre = ABDGCEF // in = DGBAECF
+BiTNode* CreatBT1(char *pre, char *in, int n)
+{
+	// todo: 
 }
 
 // create a tree via "A(B(D(,G)),C(E,F))"
 void test_create_tree(void) {
 	char *treestr = "A(B(D(,G)),C(E,F))";
 	CreateBTree(binarytree, treestr); // create a tree
-									  //DestroyTree(binarytree); // destory a tree
+
+	/*
+	//DestroyTree(binarytree); // destory a tree
 	char findchar = 'E';
 	BiTNode *p = FindNode(binarytree, findchar); // pointer value is correct 0x949fco for node 'E'
 	int h = BTHeight(binarytree);// test height of the tree // the tree height is 4
@@ -235,4 +360,32 @@ void test_create_tree(void) {
 	printf("postorder traversal:\n");
 	PostOrder(binarytree);
 	printf("\n");
+	*/
+
+	int num = NodesSum(binarytree);// test number sum // test ok // result: 7
+	DispLeaf(binarytree);// display leaf nodes // result: GEF
+	int l = NodeLevel(binarytree, 'E', 1); // 3
+	l = NodeLevel(binarytree, 'A', 1); // 1
+	l = NodeLevel(binarytree, 'D', 1); // 3
+	l = NodeLevel(binarytree, 'G', 1); // 4
+
+	int n = 0;
+	Lnodenum(binarytree, 1, 1, n); // 1
+	printf("n = %d\n", n);
+	n = 0;
+	Lnodenum(binarytree, 1, 2, n); // 2
+	printf("n = %d\n", n);
+	n = 0;
+	Lnodenum(binarytree, 1, 3, n); // 3
+	printf("n = %d\n", n);
+	n = 0;
+	Lnodenum(binarytree, 1, 4, n); // 1
+	printf("n = %d\n", n);
+
+	Ancestor(binarytree, 'G'); // DBA
+	printf("\n", n);
+
+	LevelOrder(binarytree); // ABCDEFG ok
+	printf("\n", n);
+
 }
