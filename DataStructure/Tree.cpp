@@ -2,6 +2,7 @@
 #include "Tree.h"
 
 static BiTNode* binarytree;
+// todo: move the string to create tree here
 
 void InitATreeInParent(void)
 {
