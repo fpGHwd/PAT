@@ -323,9 +323,9 @@ void LevelOrder(BiTNode *b)
 		return;
 	Enqueue(qu, b);
 	
-	while (!QueueEmpty(qu)) {
+	while (!QueueEmpty(qu)) { // condition for common loop
 		Dequeue(qu, p);
-		printf("%c", p->data);
+		printf("%c", p->data); // this is the core
 		if (p->lchild != NULL)
 			Enqueue(qu, p->lchild);
 		if (p->rchild != NULL)
