@@ -56,5 +56,8 @@
     <ClCompile Include="KMP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

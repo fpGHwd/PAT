@@ -104,5 +104,5 @@ void DispMat(TSMatrix t)
 
 bool TransMat(TSMatrix t, TSMatrix &tm)
 {
-
+	return true;
 }

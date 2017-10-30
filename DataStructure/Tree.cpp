@@ -336,7 +336,22 @@ void LevelOrder(BiTNode *b)
 // pre = ABDGCEF // in = DGBAECF
 BiTNode* CreatBT1(char *pre, char *in, int n)
 {
-	// todo: 
+	int k;
+	char *ch;
+	BiTNode *b;
+
+	if (n <= 0)
+		return NULL;
+	else
+		b = (BiTNode*)malloc(sizeof(BiTNode));
+	b->data = *pre;
+	for (k = 0; k < n; k++) { // why cannot: for(k = 0; k<n; k++)if(*(in + k) == b->data)break;
+		if ((*(in + k)) == b->data)
+			break;
+	}
+	b->lchild = CreatBT1(pre + 1, in, k);
+	b->rchild = CreatBT1(pre + k + 1, in + k + 1, n - k - 1);
+	
 }
 
 // create a tree via "A(B(D(,G)),C(E,F))"
@@ -362,6 +377,7 @@ void test_create_tree(void) {
 	printf("\n");
 	*/
 
+	/*
 	int num = NodesSum(binarytree);// test number sum // test ok // result: 7
 	DispLeaf(binarytree);// display leaf nodes // result: GEF
 	int l = NodeLevel(binarytree, 'E', 1); // 3
@@ -387,5 +403,11 @@ void test_create_tree(void) {
 
 	LevelOrder(binarytree); // ABCDEFG ok
 	printf("\n", n);
+	*/
+
+	// test creattree1
+	char *pre = "ABDGCEF"; // 
+	char *in = "DGBAECF";
+	BiTNode *b = CreatBT1(pre, in, 7);
 
 }

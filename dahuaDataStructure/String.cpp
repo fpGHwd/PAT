@@ -62,7 +62,7 @@ void get_next(char *T, int *next) {
 }
 
 //next[j] = { 0,1,1,2,3,4,2,2,3 }; // ABABAAABA
-void GetNext(char *T, int *next) { // todo: 20170925 18:45
+void GetNext(char *T, int *next) { 
 	int j=0,i = 1;
 	
 	

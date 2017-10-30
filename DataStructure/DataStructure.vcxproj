@@ -152,6 +152,8 @@
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\ywm\bubblesort.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="LinkList.cpp" />

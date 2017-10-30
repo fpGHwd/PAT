@@ -13,5 +13,6 @@
 #include <stdlib.h>
 
 #include <stdbool.h>
+#include <string.h>
 
 // TODO: reference additional headers your program requires here

@@ -40,6 +40,7 @@ bool EnQueue(LinkQueue *&Q, ElemType x)
 	e->next = NULL; // forget this sentence
 	Q->rear->next = e;
 	Q->rear = e;
+	return true;
 }
 
 bool DeQueue(SqQueue *&s, ElemType &x)

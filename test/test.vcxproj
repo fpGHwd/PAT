@@ -152,6 +152,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="array.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="Hash2.cpp" />

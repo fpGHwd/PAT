@@ -68,7 +68,6 @@ Status EnQueue(LinkQueue *L, QElemType e) {
 	n->data = e;
 	n->next = NULL; // set node
 
-
 	if (L->front == NULL && L->rear == NULL)
 		L->rear = L->front = n;
 	else {
