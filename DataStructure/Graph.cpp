@@ -62,9 +62,9 @@ void BFS(AdjGraph *G, int v) { // tempt queue to save the node
 	int qu[MAXV], front = 0, rear = 0;
 	qu[rear] = v; rear = (rear + 1) % MAXV;//EnQueue(qu, v);
 
-	if (visited[v] != 1) { // visited
-		printf(" %d", v);
-	}
+	//if (visited[v] != 1) { // visited
+	printf(" %d", v);
+	//}
 	visited[v] = 1;
 
 	p = G->adjlist[v].firstarc;

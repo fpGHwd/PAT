@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "SqList.h"
 
+void CreateList(SqList **L, ElemType a[], int n) {
+	//(*L)->length = 5;
+}
+
 bool ListInsert(SqList *&L, int i, ElemType e)
 {
 	int j;

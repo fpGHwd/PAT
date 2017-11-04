@@ -4,7 +4,6 @@
 
 typedef int ElemType;
 
-
 /*sequence list*/
 typedef struct {
 	ElemType data[MaxSize];
