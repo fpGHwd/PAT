@@ -63,15 +63,22 @@ void InsertSort(ElemType A[], int n) {
 	}
 }
 
+// swap content is OK
 void Swap(ElemType *a, ElemType *b) {
 	ElemType temp = *a;
+	*a = *b;
+	*b = temp;
+}
+// swap pointer cannot be used in Sequence-save-type
+void SwapPointer(ElemType **a, ElemType **b) {
+	ElemType *temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
 int Partition(ElemType A[], int low, int high) {
 	ElemType pivot = A[low];
-	while (low < high) { // this condition
+	while (low < high) { // this condition is forget
 		while (low < high && A[high].key > pivot.key) high--;
 		//Swap(A + low, A + high);
 		A[low].key = A[high].key;
