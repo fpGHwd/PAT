@@ -1,8 +1,11 @@
 #include "QuickSort.h"
 #include "stdafx.h"
 
+typedef char InfoType;
+
 typedef struct sort {
 	int key;
+	InfoType info;
 }ElemType;
 
 
@@ -18,21 +21,22 @@ void quick_sort(int a[], int l, int r)
 		while (i < j)
 		{
 			while (i < j && a[j] > x)
-				j--; // 从右向左找第一个小于x的数
+				j--;
 			if (i < j)
 				a[i++] = a[j];
 
 			while (i < j && a[i] < x)
-				i++; // 从左向右找第一个大于x的数
+				i++;
 			if (i < j)
 				a[j--] = a[i];
 		}
 		a[i] = x;
-		quick_sort(a, l, i - 1); /* 递归调用 */
-		quick_sort(a, i + 1, r); /* 递归调用 */
+		quick_sort(a, l, i - 1);
+		quick_sort(a, i + 1, r);
 	}
 }
 
+/*
 void test_quick_sort(void) {
 	int a[20] = {23,34,56,3,12,67,8,42,64,34,7,34,23,5,23,44,33,25,61,43};
 	int i;
@@ -48,6 +52,7 @@ void test_quick_sort(void) {
 	}
 	printf("\n");
 }
+*/
 
 // pivot in insert sort
 void InsertSort(ElemType A[], int n) {
@@ -108,8 +113,6 @@ void QuickSort(ElemType A[], int low, int high) {
 		QuickSort(A, index + 1, high);
 	}
 }
-
-
 
 void TestQuickSort(void) {
 	int a[20] = { 23,34,56,3,12,67,8,42,64,32,7,38,24,5,26,44,33,25,61,43 };
