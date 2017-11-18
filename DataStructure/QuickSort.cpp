@@ -94,11 +94,11 @@ int Partition(ElemType A[], int low, int high) {
 	return low;
 }
 
-int Partition2(ElemType A[], int low, int high) {
+int Partition2(ElemType A[], int low, int high) { // written in 2017.11.18 02:00, through day thought without code in book
 	int rand_index = low + rand() % (high - low + 1);
 	Swap(A+rand_index, A+low);
 	int i = low, j;
-	for (j = low+1; j < high; j++) {
+	for (j = low+1; j <= high; j++) {
 		if (A[j].key < A[low].key)
 			Swap(A + j, A + (++i));
 	}
@@ -108,7 +108,8 @@ int Partition2(ElemType A[], int low, int high) {
 
 void QuickSort(ElemType A[], int low, int high) {
 	if (low < high) {
-		int index = Partition(A, low, high);
+		//int index = Partition(A, low, high); // OK
+		int index = Partition2(A, low, high); // OK too
 		QuickSort(A, low, index - 1);
 		QuickSort(A, index + 1, high);
 	}
