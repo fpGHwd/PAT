@@ -15,6 +15,8 @@ typedef struct int_array {
 	int data[4];
 }test_type;
 
+void TestQuickSort(void);
+
 int main()
 {
 	/*
@@ -44,7 +46,9 @@ int main()
 	*/
 
 	//test_quick_sort();
-	test_create_tree();
+	//test_create_tree();
+
+	TestQuickSort();
 
 	getchar();
     return 0;
