@@ -84,10 +84,10 @@ void SwapPointer(ElemType **a, ElemType **b) {
 int Partition(ElemType A[], int low, int high) {
 	ElemType pivot = A[low];
 	while (low < high) { // this condition is forget
-		while (low < high && A[high].key > pivot.key) high--;
+		while (low < high && A[high].key >= pivot.key) high--; // A[high].key >= pivot.key
 		//Swap(A + low, A + high);
 		A[low].key = A[high].key;
-		while (low < high && A[low].key < pivot.key)low++;
+		while (low < high && A[low].key <= pivot.key)low++; // A[low].key <= pivot.key
 		A[high].key = A[low].key;
 	}
 	A[low] = pivot;
