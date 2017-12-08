@@ -126,3 +126,62 @@ void TestQuickSort(void) {
 		printf("%d,", A[i].key); // 3,5,7,8,12,23,24,25,26,32,33,34,38,42,43,44,56,61,64,67,
 	}
 }
+
+
+
+
+
+// #include <stdio.h>
+
+typedef int RecType;
+
+static int m = 0;
+// partion funtion
+static int l = 0;
+int partion(RecType R[], int s, int t)
+{
+	int i = s, j = t;
+	RecType tmp = R[i];
+	// printf("the %dth call partion: low = %d, high = %d\n", m++, s, t);
+	while (i < j) {
+		while (i < j && R[j] >= tmp)j--;
+		R[i] = R[j];
+		while (i < j && R[i] <= tmp)i++;
+		R[j] = R[i];
+	}
+	R[i] = tmp;
+	return i;
+}
+
+void printfarray(RecType A[], int i, int j)
+{
+	int k = 0;
+	for (k; k < j - i; k++) {
+		printf("%d,", A[k]);
+	}
+	printf("\n");
+}
+
+// quick sort
+void quicksort(RecType R[], int s, int t)
+{
+	if (s >= t) return;
+	// s < t
+	int i = partion(R, s, t);
+	printf("the %dth call quicksort: low = %d, high = %d\n", l++, s, t);
+	printfarray(R, 0, 17);
+	quicksort(R, s, i - 1);
+	quicksort(R, i + 1, t);
+}
+
+/*
+// bluetooth keyboard
+void main(int argc, char **argv)
+{
+	RecType A[] = { 15,12,18,23,5,9,15,13,17,20,5,8,3,13,2,14,17 };
+	int s = 0, t = 17;
+	quicksort(A, s, t);
+
+}
+
+*/
