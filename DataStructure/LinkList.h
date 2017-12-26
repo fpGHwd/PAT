@@ -1,5 +1,7 @@
 #pragma once
 
+
+// link list
 typedef int ElemType;
 
 typedef struct LinkNode {

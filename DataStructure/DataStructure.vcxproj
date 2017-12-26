@@ -136,13 +136,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\dahuaDS\BFSDATA.txt" />
+    <Text Include="..\dahuaDS\PrivateData.txt" />
+    <Text Include="..\YWM\data.txt" />
+    <Text Include="..\YWM\LinkMatrix.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="LinkList.h" />
     <ClInclude Include="Queue.h" />
-    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="SqList.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="stdafx.h" />
@@ -152,15 +155,9 @@
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\wd\array.c" />
-    <ClCompile Include="..\..\..\..\wd\binarytree.c" />
-    <ClCompile Include="..\..\..\..\wd\bubblesort.c" />
-    <ClCompile Include="..\..\..\..\wd\graph.c" />
-    <ClCompile Include="..\..\..\..\wd\kmp.c" />
-    <ClCompile Include="..\..\..\..\wd\quicksort.c" />
-    <ClCompile Include="..\ywm\bubblesort.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="graph2.cpp" />
+    <ClCompile Include="kmp.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="LinkList.cpp" />
@@ -177,9 +174,6 @@
     </ClCompile>
     <ClCompile Include="String.cpp" />
     <ClCompile Include="Tree.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\wd\makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

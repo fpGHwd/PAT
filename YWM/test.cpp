@@ -10,6 +10,7 @@ void test_prim(void);
 void test_kruskal(void);
 void test_hash2(void);
 void test_string(void);
+/*
 int main()
 {
 	//test_kruskal();
@@ -18,3 +19,4 @@ int main()
 	system("pause");
 	return 0;
 }
+*/
