@@ -109,5 +109,6 @@ void graph2test()/*(int argc, char **argv)*/ {
 
 	DFSAllPath(G, v, path, 0);
 	//DFS(G, v);
+	getchar();
 	return;
 }
