@@ -8,7 +8,7 @@ bool judge(long long a, long long b, long long c) {
 	result = a + b;
 	if (a > 0 && b > 0 && result < 0)
 		return true;
-	if (a < 0 && b < 0 && result > 0)
+	if (a < 0 && b < 0 && result >= 0) // result>0 -> result >= 0
 		return false;
 	if (result > c)
 		return true;
