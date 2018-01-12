@@ -21,12 +21,11 @@ int PATB1010(void) { // int main(){}
 		}
 	}
 
-	int j;
-	for (j = 0; j < count-1; j++) {
+	for (int j = 0; j < count-1; j++) {
 		printf("%d %d", output[j][0], output[j][1]);
 		printf(" ");
 	}
-	printf("%d %d", output[count-1][0], output[count-1][1]);
+	printf("%d %d", output[count-1][0], output[count-1][1]); // when input "0 0", this can output "0 0", but here is not correct, for the index(count-1) is meaningless
 
 	return 0;
 }
