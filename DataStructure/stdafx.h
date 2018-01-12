@@ -7,12 +7,9 @@
 
 #include "targetver.h"
 
-#include <stdio.h>
-#include <tchar.h>
-#include <memory.h>
-#include <stdlib.h>
-
-#include <stdbool.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <algorithm>
 
 // TODO: reference additional headers your program requires here
