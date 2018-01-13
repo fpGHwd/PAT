@@ -163,6 +163,13 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="PATA1001.cpp" />
+    <ClCompile Include="PATA1009.cpp" />
+    <ClCompile Include="PATA1046.cpp" />
+    <ClCompile Include="PATA1065.cpp" />
+    <ClCompile Include="PATB1010.cpp" />
+    <ClCompile Include="PATB1028.cpp" />
+    <ClCompile Include="PATB1041.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="Search.cpp" />
@@ -175,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

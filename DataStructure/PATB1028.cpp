@@ -7,7 +7,7 @@
 struct man{
 	char name[NAMEMAX];
 	int year, month, day;
-}D[N];
+}D[N]; // reduce occupied memory
 int oldest = 0, youngest = 0;
 
 int older(man *a, man *b) {

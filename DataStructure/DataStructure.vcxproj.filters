@@ -16,6 +16,9 @@
     <Filter Include="Data">
       <UniqueIdentifier>{a957d6b7-f9a8-4166-b3c8-05514e864d46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\PAT">
+      <UniqueIdentifier>{f86c2aa7-f2c3-47f8-8d04-033ff39cae70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -112,6 +115,30 @@
     </ClCompile>
     <ClCompile Include="AlgorithmNode.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1046.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1065.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1010.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1001.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1009.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1041.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1028.cpp">
+      <Filter>Source Files\PAT</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

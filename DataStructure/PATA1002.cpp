@@ -1,11 +1,11 @@
 #include "stdafx.h" // #include <cstdio>
 
 #define K 10
-struct term {
+struct term1 {
 	float coefficient; // coefficient
 	int exponent; // exponent
 	int flag;
-	term() {
+	term1() {
 		coefficient = 0;
 		exponent = 0;
 		flag = false;

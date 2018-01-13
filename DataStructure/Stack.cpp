@@ -53,6 +53,7 @@ bool Push(SqStack *&s, ElemType e)
 	}
 	else {
 		s->data[++s->top] = e;
+		return true;
 	}
 }
 
@@ -104,7 +105,7 @@ bool GetTop(SqStack *&s, ElemType &e)
 // embraces match test
 bool Match(char exp[], int n)
 {
-	int i = 0; char e;
+	int i = 0; char e = 0;
 	
 	bool match = true;
 
