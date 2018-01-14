@@ -1,10 +1,6 @@
 #include "stdafx.h" // #include<cstdio>
 // #include<string.h>
 
-struct time_pat {
-	
-};
-
 struct sign{
 	char id[20];
 	int hour, minute, second; // sign time // regardless of signin or signout
