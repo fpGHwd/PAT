@@ -2,57 +2,42 @@
 // #include<string.h>
 
 struct time_pat {
-	int hour, minute, second;
+	
 };
 
 struct sign{
 	char id[20];
-	struct time_pat signin, signout;
+	int hour, minute, second; // sign time // regardless of signin or signout
 }first, last;
 
-int cmptime(struct time_pat a, struct time_pat b) { // 
-	if (a.hour > b.hour || (a.hour == b.hour && a.minute > b.minute) || (a.hour == b.hour && a.minute == b.minute && a.second > b.second)) {
-		return 1;
-	}
-	else if(a.hour == b.hour && a.minute == b.minute && a.second == b.second){
-		return 0;
-	}
-	else {
-		return -1;
-	}
+bool cmp(struct sign a, struct sign b) {
+	if (a.hour != b.hour)
+		return a.hour > b.hour;
+	if (a.minute != b.minute)
+		return a.minute > b.minute;
+	return a.second > b.second;
 }
 
 int PATA1006(void) {
 	int n;
 	scanf("%d", &n);
-	char id[20];
-	struct time_pat signin, signout;
+	struct sign tmp;
+	bool flag = false;
 	for (int i = 0; i < n; i++) {
-		scanf("%s %d:%d:%d", id, &signin.hour, &signin.minute, &signin.second);
-		if (i == 0) {
-			strcpy(first.id, id);
-			first.signin.hour = signin.hour;
-			first.signin.minute = signin.minute;
-			first.signin.second = signin.second;
-			strcpy(last.id, id);
-			last.signin.hour = signin.hour;
-			last.signin.minute = signin.minute;
-			last.signin.second = signin.second;
-		}
-		else {
-			if (cmptime(signin, first.signin) == -1) {
-				strcpy(first.id, id);
-				first.signin.hour = signin.hour;
-				first.signin.minute = signin.minute;
-				first.signin.second = signin.second;
+		scanf("%s %d:%d:%d", tmp.id, &tmp.hour, &tmp.minute, &tmp.second);
+		if (flag) {
+			if (!cmp(tmp, first)) {
+				first = tmp;
 			}
 		}
-		scanf("%d:%d:%d", &signout.hour, &signout.minute, &signin.second);
-		if (cmptime(signin, last.signin) == 1) {
-			strcpy(last.id, id);
-			last.signin.hour = signin.hour;
-			last.signin.minute = signin.minute;
-			last.signin.second = signin.second;
+		else {
+			first = tmp;
+			last = tmp;
+			flag = true;
+		}
+		scanf("%d:%d:%d", &tmp.hour, &tmp.minute, &tmp.second);
+		if (cmp(tmp, last)) {
+			last = tmp;
 		}
 	}
 
