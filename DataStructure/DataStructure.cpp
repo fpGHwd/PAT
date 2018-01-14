@@ -8,15 +8,15 @@ void TestQuickSort(void);
 void graph2test(void);
 int AlgorithmNote(void);
 void Test(void);
-void PATA1046(void);
-int PATB1028(void);
+int PATA1058(void);
+int PATB1031(void);
 
 int main()
 {
 	//graph2test();
 	//AlgorithmNote();
 	//Test();
-	PATB1028();
+	PATB1031();
     return 0;
 }
 

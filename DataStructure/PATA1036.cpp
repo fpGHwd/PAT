@@ -4,7 +4,7 @@
 #define NA "NA"
 
 struct record{
-	char name[11]; // no more than 10 characters
+	char name[11]; // 10 -> 11 for that no more than 10 characters
 	char ID[11];
 	int score;
 }boy_lowest, girl_highest;

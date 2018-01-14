@@ -140,5 +140,47 @@
     <ClCompile Include="PATB1028.cpp">
       <Filter>Source Files\PAT</Filter>
     </ClCompile>
+    <ClCompile Include="PATA1011.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1006.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1036.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1027.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1031.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1022.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1025.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1037.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1019.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1027.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1058.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1006.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1021.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1031.cpp">
+      <Filter>Source Files\PAT</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
