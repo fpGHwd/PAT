@@ -8,7 +8,10 @@ char z2m[11] = { '1','0','X','9','8','7','6','5','4','3','2' };
 bool valid(char *idno) {
 	int sum = 0;
 	for (int i = 0; i < 17; i++) {
-		sum += weight[i] * (idno[i] - '0');
+		if (idno[i] <= '9' && idno[i] >= '0') // fatal not check
+			sum += weight[i] * (idno[i] - '0');
+		else
+			return false;
 	}
 	if (idno[17] == z2m[sum % 11])
 		return true;
