@@ -41,12 +41,11 @@ int PATB1027(void) {
 			b = k - i - 1;
 		}
 		c = b;
-		while (c--)printf("|");
+		while (c--)printf("#");
 		while (a--)printf("%c",ch);
-		while (b--)printf("|");
 		printf("\n");
 
 	}
-	printf("%d\n", re);
+	printf("%d", re);
 	return 0;
 }
