@@ -27,6 +27,7 @@ int PATA1019() {
 	printf("%s\n", flag ? "Yes" : "No");
 	for (int i = count-1; i > 0; i--) {
 		printf("%d ", save[i]);
+		// printf("%d", save[i]); if(i != 0)printf(" "); // from book
 	}
 	printf("%d", save[0]);
 	return 0;
