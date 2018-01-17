@@ -1,50 +1,65 @@
 #include "stdafx.h"
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
 
-#include<cstdio>
-#include<cstring>
-#include<algorithm>
 using namespace std;
-struct student {
-	char id[15];
-	int score;
-	int location_number;
-	int local_rank;
-}stu[300010];
-bool cmp(student a, student b) {
-	if (a.score != b.score) return a.score > b.score;
-	else return strcmp(a.id, b.id) < 0;
+
+#define LOCATIONS_N 100
+#define TESTEES 300
+
+static struct record_pata1025 {
+	char id[14];
+	int score, location ,local_rank, all_rank;
+}stu[LOCATIONS_N * TESTEES];
+
+static bool cmp(struct record_pata1025 a, struct record_pata1025 b) {
+	if (a.score != b.score)
+		return a.score > b.score;
+	else
+		return strcmp(a.id,b.id) < 0; // should not use int 
 }
-int PATA1025() {
-	int n, k, num = 0;
-	scanf_s("%d", &n);
-	for (int i = 1; i <= n; i++) {
-		scanf_s("%d", &k);
-		for (int j = 0; j < k; j++) {
-			scanf_s("%s %d", stu[num].id, &stu[num].score);
-			stu[num].location_number = i;
-			num++;
+
+//int sec[LOCATIONS_N] = { 0 };
+int PATA1025(void) {
+	//freopen("input.txt", "r", stdin);
+	int n, m, k = 0;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		scanf("%d", &m);
+		for (int j = k; j <k + m; j++) {
+			scanf("%s %d", stu[j].id, &stu[j].score);
+			stu[j].location = i + 1;
 		}
-		sort(stu + num - k, stu + num, cmp);
-		stu[num - k].local_rank = 1;
-		for (int j = num - k + 1; j < num; j++) {
+		sort(&stu[k], &stu[k + m], cmp);
+		stu[k].local_rank = 1;
+		for (int j = k+1; j < k + m; j++) {
 			if (stu[j].score == stu[j - 1].score) {
 				stu[j].local_rank = stu[j - 1].local_rank;
 			}
 			else {
-				stu[j].local_rank = j + 1 - (num - k);
+				stu[j].local_rank = j - k + 1;
 			}
 		}
+		k += m;
+	}
 
-	}
-	printf("%d\n", num);
-	sort(stu, stu + num, cmp);
-	int r = 1;
-	for (int i = 0; i < num; i++) {
-		if (i > 0 && stu[i].score != stu[i - 1].score) {
-			r = i + 1;
+	printf("%d\n", k);
+	if (k == 0)
+		return 0;
+
+	sort(&stu[0], &stu[k], cmp);
+	stu[0].all_rank = 1;
+	printf("%s %d %d %d\n", stu[0].id, stu[0].all_rank, stu[0].location, stu[0].local_rank);
+	for (int i = 1; i < k; i++) {
+		if (stu[i].score == stu[i - 1].score) {
+			stu[i].all_rank = stu[i - 1].all_rank;
 		}
-		printf("%s ", stu[i].id);
-		printf("%d %d %d\n", r, stu[i].location_number, stu[i].local_rank);
+		else {
+			stu[i].all_rank = i + 1;
+		}
+		printf("%s %d %d %d\n", stu[i].id, stu[i].all_rank, stu[i].location, stu[i].local_rank);
 	}
+	
 	return 0;
 }
