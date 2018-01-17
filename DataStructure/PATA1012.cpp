@@ -9,71 +9,34 @@ using namespace std;
 
 struct student_pata1012{
 	int id;
-	int C, M, E;
-	int A;
+	int score[4];
 }D[2000];
 
 int stu_r[MAX_STU_ID+1][4] = {0}, m, n; // -1 or 0 // fast to find, not search everyone // 999999 -> 999999 + 1
 char character[4] = { 'A','C','M', 'E' };
+int u;
 
-bool cmp_c(struct student_pata1012 a, struct student_pata1012 b) {
-	return a.C > b.C;
-}
-
-bool cmp_m(struct student_pata1012 a, struct student_pata1012 b) {
-	return a.M > b.M;
-}
-
-bool cmp_e(struct student_pata1012 a, struct student_pata1012 b) {
-	return a.E > b.E;
-}
-
-bool cmp_a(struct student_pata1012 a, struct student_pata1012 b) {
-	return a.A > b.A;
+bool cmp(struct student_pata1012 a, struct student_pata1012 b) {
+	return a.score[u] > b.score[u];
 }
 
 int PATA1012(void) {
-	freopen("input.txt", "r", stdin);
+	//freopen("input.txt", "r", stdin);
 	scanf("%d%d", &n, &m);
 	for (int i = 0; i < n; i++) {
-		scanf("%d%d%d%d",&D[i].id, &D[i].C, &D[i].M, &D[i].E);
-		D[i].A = (D[i].C + D[i].M + D[i].E)/ 3;
+		scanf("%d%d%d%d",&D[i].id, &D[i].score[1], &D[i].score[2], &D[i].score[3]);
+		D[i].score[0] = (D[i].score[1] + D[i].score[2] + D[i].score[3])/ 3;
 	}	
 
-	sort(&D[0], &D[n], cmp_a);
-	stu_r[D[0].id][0] = 1;
-	for (int i = 1; i < n; i++) {
-		if (D[i].A == D[i - 1].A)
-			stu_r[D[i].id][0] = stu_r[D[i - 1].id][0];
-		else
-			stu_r[D[i].id][0] = i + 1;
-	}
-
-	sort(&D[0], &D[n], cmp_c);
-	stu_r[D[0].id][1] = 1;
-	for (int i = 1; i < n; i++) {
-		if (D[i].C == D[i - 1].C)
-			stu_r[D[i].id][1] = stu_r[D[i-1].id][1];
-		else
-			stu_r[D[i].id][1] = i + 1;
-	}
-
-	sort(&D[0], &D[n], cmp_m);
-	stu_r[D[0].id][2] = 1;
-	for (int i = 1; i < n; i++) {
-		if (D[i].M == D[i - 1].M)
-			stu_r[D[i].id][2] = stu_r[D[i - 1].id][2];
-		else
-			stu_r[D[i].id][2] = i + 1;
-	}
-
-	sort(&D[0], &D[n], cmp_e);
-	stu_r[D[0].id][3] = 1;
-	for (int i = 1; i < n; i++) {
-		if (D[i].E == D[i - 1].E)
-			stu_r[D[i].id][3] = stu_r[D[i - 1].id][3];
-		else
-			stu_r[D[i].id][3] = i + 1;
+	for (u = 0; u < 4; u++) {
+		sort(&D[0], &D[n], cmp);
+		stu_r[D[0].id][u] = 1;
+		for (int i = 1; i < n; i++) {
+			if (D[i].score[u] == D[i - 1].score[u])
+				stu_r[D[i].id][u] = stu_r[D[i - 1].id][u];
+			else
+				stu_r[D[i].id][u] = i + 1;
+		}
 	}
 
 	int id;
