@@ -89,11 +89,15 @@ int PATA1075(void) {
 	int count= 0; // equals to m
 	for (int i = 0; i < k; i++) {
 		scanf("%d %d %d", &id, &pro, &score);
-		if (RECS[id].flag == false && score != -1) {
-			RECS[id].flag = true;
-			RECS[id].id = id;
-			RECS[id].score[pro - 1] = score;
-			RECS[id].sum_s += score;
+		if (RECS[id].flag == false) { // put sum logic here will increase complexity of TOTAL
+			if (score != -1) {
+				RECS[id].flag = true;
+				RECS[id].id = id;
+				RECS[id].score[pro - 1] = score;
+				RECS[id].sum_s += score;
+				if (score == perfect_score[pro - 1])
+					RECS[id].perfect_solved++;
+			}
 		}
 		else {
 			int temp_score = RECS[id].score[pro - 1];
@@ -159,4 +163,4 @@ int PATA1075(void) {
 	}
 
 	return 0;
-}
+} // todo: not pass pat a1075
