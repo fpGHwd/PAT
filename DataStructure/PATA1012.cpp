@@ -12,9 +12,9 @@ struct student_pata1012{
 	int score[4];
 }D[2000];
 
-int stu_r[MAX_STU_ID+1][4] = {0}, m, n; // -1 or 0 // fast to find, not search everyone // 999999 -> 999999 + 1
-char character[4] = { 'A','C','M', 'E' };
-int u;
+static int stu_r[MAX_STU_ID+1][4] = {0}, m, n; // -1 or 0 // fast to find, not search everyone // 999999 -> 999999 + 1
+static char character[4] = { 'A','C','M', 'E' };
+static int u;
 
 bool cmp(struct student_pata1012 a, struct student_pata1012 b) {
 	return a.score[u] > b.score[u];

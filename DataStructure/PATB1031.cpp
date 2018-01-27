@@ -41,5 +41,6 @@ int PATB1031() { // int main(){;}
 		}
 	}
 
+	getchar();
 	return 0;
 }

@@ -21,7 +21,7 @@ static struct record { // -> static
 	enum line online;
 }D[RECORD_NUM];
 
-bool cmp(struct record a, struct record b) {
+static bool cmp(struct record a, struct record b) {
 	if (strcmp(a.name, b.name) == 0) {
 		if (a.month != b.month) {
 			return a.month < b.month;
@@ -46,7 +46,7 @@ bool cmp(struct record a, struct record b) {
 }
 
 int PATA1016() {
-	freopen("input.txt", "r", stdin);
+	//freopen("input.txt", "r", stdin);
 	for (int i = 0; i < 24; i++) {
 		scanf("%d", &rate[i]);
 		getchar();
@@ -121,7 +121,7 @@ int PATA1016() {
 			sum += delta;
 		}
 	}
-	printf("Total amount: $%.2f\n", sum / 100.0); // last one
+	printf("Total amount: $%.2f\n", sum / 100.0); // last one // when there is i which satisfies online[i]!= 0; if all i make online[i] = 0, then no this print(loosely)
 
 	return 0;
 }

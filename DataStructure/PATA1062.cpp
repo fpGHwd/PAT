@@ -32,7 +32,7 @@ void set_level(struct candidate *a) {
 	if (a->vi >= H && a->in >= H) {
 		a->lev = 1;
 	}
-	else if(a->vi >= H && a->in < H){
+	else if (a->vi >= H && a->in < H) {
 		a->lev = 2;
 	}
 	else if (a->vi >= a->in && a->vi < H) {

@@ -16,9 +16,6 @@
     <Filter Include="Data">
       <UniqueIdentifier>{a957d6b7-f9a8-4166-b3c8-05514e864d46}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PAT">
-      <UniqueIdentifier>{f86c2aa7-f2c3-47f8-8d04-033ff39cae70}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -34,6 +31,9 @@
     <Text Include="..\dahuaDS\PrivateData.txt">
       <Filter>Data</Filter>
     </Text>
+    <Text Include="input.txt" />
+    <Text Include="input1.txt" />
+    <Text Include="input2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -74,113 +74,167 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataStructure.cpp">
+    <ClCompile Include="pat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stack.cpp">
+    <ClCompile Include="PATA1001.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Queue.cpp">
+    <ClCompile Include="PATA1005.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="String.cpp">
+    <ClCompile Include="PATA1006.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SqList.cpp">
+    <ClCompile Include="PATA1009.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkList.cpp">
+    <ClCompile Include="PATA1011.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
+    <ClCompile Include="PATA1012.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix.cpp">
+    <ClCompile Include="PATA1016.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tree.cpp">
+    <ClCompile Include="PATA1019.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Graph.cpp">
+    <ClCompile Include="PATA1025.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Search.cpp">
+    <ClCompile Include="PATA1027.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="graph2.cpp">
+    <ClCompile Include="PATA1028.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="kmp.cpp">
+    <ClCompile Include="PATA1031.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AlgorithmNode.cpp">
+    <ClCompile Include="PATA1033.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
+    <ClCompile Include="PATA1035.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1036.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1041.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PATA1046.cpp">
-      <Filter>Source Files\PAT</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PATA1065.cpp">
-      <Filter>Source Files\PAT</Filter>
+    <ClCompile Include="PATA1048.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PATB1010.cpp">
-      <Filter>Source Files\PAT</Filter>
+    <ClCompile Include="PATA1050.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PATA1001.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1009.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATB1041.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATB1028.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1011.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1006.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1036.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATB1027.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1031.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATB1022.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1025.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATB1037.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1019.cpp">
-      <Filter>Source Files\PAT</Filter>
-    </ClCompile>
-    <ClCompile Include="PATA1027.cpp">
-      <Filter>Source Files\PAT</Filter>
+    <ClCompile Include="PATA1055.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PATA1058.cpp">
-      <Filter>Source Files\PAT</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1062.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1065.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1070.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1075.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1080.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1082.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1083.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1084.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1092.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1095.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1002.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1005.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PATB1006.cpp">
-      <Filter>Source Files\PAT</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1009.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1010.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1014.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PATB1021.cpp">
-      <Filter>Source Files\PAT</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1022.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1023.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1027.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1028.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PATB1031.cpp">
-      <Filter>Source Files\PAT</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1033.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1037.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1038.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1041.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1042.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1043.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1047.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATB1048.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1077.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PATA1073.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

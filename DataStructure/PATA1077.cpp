@@ -1,6 +1,6 @@
 #include "stdafx.h" // #include <cstdio>
 #include <cstdlib>
-// #include <cstring>
+#include <cstring>
 
 #define N 100
 #define CHARACTERS_MAX 256
@@ -11,7 +11,7 @@ int PATA1077(void) { // int main(){;}
 	int n, len, len_min;
 	char temp;
 	scanf("%d", &n);
-	getchar();
+	getchar(); // here is important
 	for (int i = 0; i < n; i++) {
 		gets_s(D[i]); // not read \n  // gets_s -> gets
 		len = strlen(D[i]);

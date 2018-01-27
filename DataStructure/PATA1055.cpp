@@ -42,7 +42,7 @@ bool cmp(struct record_pata1055 a, struct record_pata1055 b)
 }
 
 int PATA1055() {
-	//freopen("input.txt", "r", stdin);
+	freopen("input.txt", "r", stdin);
 	scanf("%d%d", &N, &K);
 	for (int i = 0; i < N; i++) {
 		scanf("%s %d %d", wealthies[i].name, &wealthies[i].age, &wealthies[i].net_worth);
@@ -50,7 +50,7 @@ int PATA1055() {
 
 	sort(&wealthies[0], &wealthies[N], cmp);
 
-	int agemin, agemax, start, end, count;
+	int agemin, agemax, count;
 	for (int i = 0; i < K; i++) {
 		count = 0;
 		scanf("%d%d%d", &M, &agemin, &agemax);

@@ -41,4 +41,4 @@ int PATB1033() {
 		}
 	}
 	return 0;
-} // scanf + getchar -> gets -> AC
+} // gets + scanf + getchar -> gets + gets -> AC

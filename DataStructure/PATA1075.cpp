@@ -63,6 +63,8 @@ bool cmp(struct record_pata1075 a, struct record_pata1075 b) {
 
 void print_score(int rank, int idx, bool last, int num_score) {
 	printf("%d ", rank);
+
+	// cannot calculate sum here, for sort's using sum_s;
 	printf("%05d %d ", RECS[idx].id, RECS[idx].sum_s); // %06d -> %05d
 	for (int i = 0; i < num_score; i++) {
 		if (RECS[idx].score[i] == -1)
@@ -89,6 +91,21 @@ int PATA1075(void) {
 	int count= 0; // equals to m
 	for (int i = 0; i < k; i++) {
 		scanf("%d %d %d", &id, &pro, &score);
+		if (score != -1) {
+			RECS[id].flag = true;
+		}
+		if (score == -1 && RECS[id].score[pro - 1] == -1)
+			RECS[id].score[pro - 1] = 0;
+
+		if (score == perfect_score[pro - 1] && RECS[id].score[pro - 1] < perfect_score[pro - 1]) {
+			RECS[id].score[pro - 1] = score;
+			RECS[id].perfect_solved++;
+		}
+
+		if (score > RECS[id].score[pro - 1] && score < perfect_score[pro - 1]) { // inherit info from up "if"
+			RECS[id].score[pro - 1] = score;
+		}
+		/*
 		if (RECS[id].flag == false) { // put sum logic here will increase complexity of TOTAL
 			if (score != -1) {
 				RECS[id].flag = true;
@@ -120,6 +137,7 @@ int PATA1075(void) {
 				}
 			}
 		}
+		*/
 		/*
 		if (score > RECS[id].score[pro - 1]) {
 			if (RECS[id].flag == false) {
@@ -147,6 +165,18 @@ int PATA1075(void) {
 				*/
 	}
 
+	for (int j = 0; j < USERS_MAX; j++) {
+		if (RECS[j].flag) {
+			int tem_sum = 0;
+			for (int i = 0; i < PROBLEM_MAX; i++) {
+				if (RECS[j].score[i] != -1)
+					tem_sum += RECS[j].score[i];
+			}
+			RECS[j].sum_s = tem_sum;
+		}
+	}
+
+
 	sort(&RECS[0], &RECS[USERS_MAX], cmp); // fatal: sort -> runtime error caused by record multiple defined in other files before, and vanished after rename struct record of this file
 
 	int rank = 1;
@@ -163,4 +193,4 @@ int PATA1075(void) {
 	}
 
 	return 0;
-} // todo: not pass pat a1075
+}

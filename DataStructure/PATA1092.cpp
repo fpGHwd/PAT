@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "stdafx.h" // comment
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -8,7 +8,7 @@
 static int balls_shops[ASCII_48_127] = { 0 }, balls_needs[ASCII_48_127] = {0};
 static char balls_shop[MAX_BALL], balls_need[MAX_BALL];
 
-int PATA1092() {
+int PATA1092() { // int main(){;}
 	//freopen("input.txt", "r", stdin);
 	bool contain = true;
 	gets_s(balls_shop);
