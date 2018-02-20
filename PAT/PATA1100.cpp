@@ -15,7 +15,7 @@ static string high_ref[13] = { "tret", "tam", "hel", "maa", "huh", "tou", "kes",
 map<string, int>string2integer;
 
 int PATA1100() {
-	freopen("input.txt", "r", stdin);
+	freopen("input1.txt", "r", stdin);
 	int n;
 	//scanf("%d%*c", &n); // not seem before
 	cin >> n;
@@ -23,7 +23,7 @@ int PATA1100() {
 
 	for (int i = 0; i < 13; i++) {
 		string2integer[low_ref[i]] = i; // ref is ambiguous
-		string2integer[high_ref[i]] = i * 10;
+		string2integer[high_ref[i]] = i * 13; // finally AC
 	}
 	
 	string temp;
