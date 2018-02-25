@@ -19,7 +19,7 @@ int PATA1015() {
 	int n, radix;
 	while (scanf("%d", &n) != EOF && n > 0) {
 		scanf("%d", &radix); // should read radix and then judge the n/prime, critical
-		if (!isPrime(n)) {
+		if (!isPrime(n)) { /// this is also a point(3, 0~3)
 			printf("No\n");
 			continue;
 		}

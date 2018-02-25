@@ -8,8 +8,5 @@
 #include "targetver.h"
 
 #include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <algorithm>
 
 // TODO: reference additional headers your program requires here

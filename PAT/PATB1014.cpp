@@ -1,6 +1,7 @@
 #include "stdafx.h"
 // #include <cstdio>
 // #include <cstring>
+#include <cstring>
 
 #define MAX 60
 

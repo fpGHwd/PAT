@@ -3,10 +3,11 @@
 
 #include "stdafx.h"
 
-int PATA1033();
+int PATA1056();
+int RatInAMaze();
 
 int main()
 {
-	PATA1033();
+	PATA1056();
     return 0;
 }

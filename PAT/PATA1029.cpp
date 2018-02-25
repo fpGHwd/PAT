@@ -20,7 +20,7 @@ int PATA1029() {
 	}
 
 	sort(A, A + M + N);
-	printf("%d", A[(M + N) / 2 - (((M+N)%2 == 0)?1:0)]);
+	printf("%d", A[(M + N-1) / 2]); // (M + N) / 2 - (((M+N)%2 == 0)?1:0)   ->   (M+N-1)/2
 
 	return 0;
 }

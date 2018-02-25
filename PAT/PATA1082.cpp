@@ -1,4 +1,8 @@
 #include "stdafx.h"
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cstdlib>
 
 #define MAX_DIGITS 9
 #define CHAR_MAX (9+1)

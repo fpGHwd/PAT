@@ -19,7 +19,7 @@ int PATA1071() {
 	string temp;
 	while (i < len) {
 		int j = i,front;
-		while (j < len && !(isalpha(save[j])|| isdigit(save[j])))j++; // !isalpha(save[j])  ->  *(!isalpha(save[j]));
+		while (j < len && !(isalpha(save[j])|| isdigit(save[j])))j++; // !isalpha(save[j])  ->  *(!isalpha(save[j])); // maybe not effect AC
 		front = j;
 		while (j < len && (isalpha(save[j]) || isdigit(save[j])))j++;
 		if (j != front) {

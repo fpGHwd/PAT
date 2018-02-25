@@ -3,6 +3,7 @@
 #include <cstring>
 
 #define MAX_LENGTH 100000
+#define MOD 1000000007
 
 static char s[MAX_LENGTH+1];
 static int p_num[MAX_LENGTH + 1], t_num[MAX_LENGTH + 1];
@@ -34,11 +35,11 @@ int PATA1093() {
 	int sum = 0;
 	for (int i = 0; i < len; i++) {
 		if (s[i] == 'A') {
-			sum += p_num[i] * t_num[i];
+			sum = (sum +  p_num[i] * t_num[i]) % MOD; // %d
 		}
 	}
 
-	printf("%d", sum % 1000000007);
+	printf("%d", sum % MOD);
 
 	return 0;
 }

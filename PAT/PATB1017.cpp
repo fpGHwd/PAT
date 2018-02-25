@@ -8,7 +8,7 @@ using namespace std;
 #define MAX_HASH_VALUE 26*26*26*10+1  // vector of substance is put things into structure
 vector<int> result[MAX_HASH_VALUE];
 
-int index(char *name) {
+static int index(char *name) {
 	int res = 0;
 	for (int i = 0; i < 4; i++) {
 		if (i != 3)

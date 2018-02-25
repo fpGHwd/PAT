@@ -1,4 +1,7 @@
 #include "stdafx.h"
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #define MAX 100
 
@@ -19,7 +22,7 @@ int PATB1048() {
 	int c = (a > b) ? a : b, count =1,d,e;
 	while (a >= 0 || b >= 0) { // equals to c >= 0
 		if (a < 0)
-			d = '0';
+			d = '0'; 
 		else
 			d = A[a];
 		if (b < 0)

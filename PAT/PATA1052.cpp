@@ -18,7 +18,7 @@ struct node {
 	}
 }Node[NODE_MAXN];
 
-// true stands for b's following a
+// true stands for b's following a's
 bool compare(node a, node b) {
 	if (a.flag == true && b.flag == false)
 		return true;

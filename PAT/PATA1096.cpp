@@ -18,6 +18,8 @@ int PATA1096() {
 			temp /= j++;
 			count++;
 		}
+
+
 		if (count > len) {
 			len = count;
 			k = i;

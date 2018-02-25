@@ -12,13 +12,14 @@ using namespace std;
 
 static struct stations {
 	float unit_gas_price, distance;
-	bool choose;
+	//bool choose;
 }sta[GAS_STATIONS_MAX+1];
 
 static bool cmp(struct stations a, struct stations b) {
 	return a.distance < b.distance;
 }
 
+// recursion
 void opt(struct stations *a, struct stations *b) {
 	if (b - 1 != a) {
 
@@ -33,7 +34,7 @@ int PATA1033() {
 	float temp;
 	for (int i = 0; i < n; i++) {
 		scanf("%f%f", &sta[i].unit_gas_price, &sta[i].distance);
-		sta[i].choose = false;
+		//sta[i].choose = false;
 	}
 	sta[n].distance = dis;
 	sort(sta, sta + n+1, cmp);
@@ -44,7 +45,15 @@ int PATA1033() {
 			break;
 		}
 	}
-	opt(sta, sta+k);
+	//opt(sta, sta+k);
+	if (sta[0].distance != 0) {
+		printf("The maximum travel distance = 0.00\n");
+	}
+	else {
+		// to be AC
+	}
 
 	return 0;
+
+
 }

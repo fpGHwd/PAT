@@ -20,8 +20,6 @@ int PATA1078() {
 	int MSize, N;
 	scanf("%d%d", &MSize, &N);
 
-	//isPrime(4);
-
 	int p;
 	if (!isPrime(MSize)) // redefine
 		for (int i = MSize + 1; i; i++) {

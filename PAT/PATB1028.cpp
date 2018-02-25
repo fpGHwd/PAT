@@ -1,4 +1,5 @@
 #include "stdafx.h" // #include<cstdio> #include<cstring>
+#include <cstring>
 
 #define CURRENTDATE 20140906
 #define NAMEMAX 10

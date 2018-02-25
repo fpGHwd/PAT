@@ -1,4 +1,7 @@
 #include "stdafx.h"
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #define BASE 10
 

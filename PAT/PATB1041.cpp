@@ -1,4 +1,6 @@
 #include "stdafx.h" // #include<cstdio>
+#include <cstdio>
+
 
 #define N 1000
 

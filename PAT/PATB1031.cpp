@@ -1,5 +1,6 @@
 #include "stdafx.h" // #include <cstdio>
 // #include <string.h>
+#include <cstring>
 
 #define N 100
 

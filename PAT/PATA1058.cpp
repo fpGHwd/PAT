@@ -1,5 +1,10 @@
 #include "stdafx.h"
 
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cstdlib>
+
 #define S_G 17
 #define K_S 29
 
